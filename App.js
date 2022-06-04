@@ -27,8 +27,8 @@ export default function App() {
     // <Ex8 />
     // <Ex9 />
     // <Ex10 />
-    // <Ex11 />
-    <Ex12 />
+    <Ex11 />
+    // <Ex12 />
 
   );
 }
