@@ -33,6 +33,7 @@ export default function App() {
     // <Ex11 />
     // <Ex12 />
     // <Travel />
-    <Health />
+    // <Health />
+    <Home  />
   );
 }
