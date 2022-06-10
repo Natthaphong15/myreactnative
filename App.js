@@ -16,6 +16,10 @@ import Ex12 from './screens/week2/Ex12';
 import Travel from './screens/week3/Travel';
 import Resort from './screens/week4/Resort';
 import Health from './screens/week5/Health';
+import { NavigationContainer } from '@react-navigation/native';
+import HomeStack from './navigations/HomeStack';
+import BottomTab from './navigations/BottomTab';
+
 
 
 export default function App() {
@@ -34,6 +38,10 @@ export default function App() {
     // <Ex12 />
     // <Travel />
     // <Health />
-    <Home  />
+    // <Home  />
+    // <HomeStack />
+    <NavigationContainer><BottomTab /></NavigationContainer>
+    
+
   );
 }
