@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View } from 'react-native';
-import { Button, View } from 'react-native';
+import { Button } from 'react-native';
 
 export default function Ex2() {
   const navigation = useNavigation()
@@ -13,6 +13,8 @@ export default function Ex2() {
       </View>
       <Button title="Next" onPress={() => { navigation.navigate("Ex3") }} />
     </View>
+
+    
     );
 
 

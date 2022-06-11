@@ -1,11 +1,11 @@
 import React from "react";
 import { View } from "react-native";
-import React, { useState } from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { useState } from 'react'
+import { Text, TouchableOpacity } from 'react-native'
 import { FontAwesome } from "@expo/vector-icons";
 
 export default function Heartbeat() {    
-export default function Heartbeat() {
+
     const [heart, setHeart] = useState('0')
     const onPressHeart = () => {
         setHeart(Number(heart) + 1)
@@ -26,5 +26,5 @@ export default function Heartbeat() {
         </View>
     );
 }
-}
+
 
