@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import BookStorage from "../../storages/BookStorage";
+import BookLaravel from "../../services/BookLaravel";
 
 
 export default function Book() {
@@ -15,11 +14,12 @@ export default function Book() {
 
     const loadBooks = async () => {
         setRefresh(true);
-        let products = await BookStorage.readItems();
+        //let products = await BookStorage.readItems();
+        // let products = await BookStorage.readItems();
+        let products = await BookLaravel.getItems();
         setProducts(products);
         setRefresh(false);
     };
-
     useEffect(() => {
         // WHEN MOUNT AND UPDATE
         const unsubscribe = navigation.addListener("focus", () => {
@@ -28,11 +28,7 @@ export default function Book() {
         // WHEN UNMOUNT
         return unsubscribe;
     }, [navigation]);
-
     const [refresh, setRefresh] = useState(false);
-
-
-
     return (
         <View style={{ flex: 1 }}>
             <FlatList
@@ -60,7 +56,6 @@ export default function Book() {
                 }
                 }
             />
-
             <TouchableOpacity
                 onPress={() => {
                     navigation.navigate("BookForm", { item: null });
@@ -81,8 +76,6 @@ export default function Book() {
             >
                 <FontAwesome name="plus" size={40} />
             </TouchableOpacity>
-
-
         </View>
     );
-} 
+}
